@@ -2,10 +2,10 @@ import './Button.scss';
 
 function Button({
   onClick = () => { },
-  primary= false,
+  type= '',
   children,
 }) {
-  return <button className={'button ' + (primary ? 'primary': '')} onClick={onClick}>{children}</button>
+  return <button className={'button ' + (type)} onClick={onClick}>{children}</button>
 }
 
 export default Button;

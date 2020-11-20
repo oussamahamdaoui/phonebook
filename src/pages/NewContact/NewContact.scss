@@ -1,0 +1,18 @@
+@import '../../colors';
+ 
+
+.new-contact{
+  h1{
+    text-align: center;
+    color: $light;
+  }
+  .new-contact-form{
+    .input{
+      margin-bottom: 1em;
+    }
+
+    .cancel{
+      margin-left: 1em;
+    }
+  }
+}

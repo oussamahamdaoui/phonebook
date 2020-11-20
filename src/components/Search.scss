@@ -11,11 +11,11 @@
     z-index: 2;
     width: 20px;
     height: 20px;
-    left: 0.5em;
+    left: 1em;
     stroke: $icon-secondary;
   }
   .input{
     flex:1;
-    padding-left: calc(20px + 1em);
+    padding-left: calc(20px + 2em);
   }
 }

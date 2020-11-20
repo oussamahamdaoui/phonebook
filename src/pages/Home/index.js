@@ -1,5 +1,5 @@
-import '../../components/Head';
-import Head from '../../components/Head';
+import './Head';
+import Head from './Head';
 import ContactList from './ContactList';
 
 function Home() {
