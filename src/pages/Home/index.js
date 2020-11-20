@@ -1,20 +1,25 @@
 import './Head';
 import Head from './Head';
 import ContactList from './ContactList';
+import { useEffect, useState } from 'react';
+import { getContacts } from '../../api';
 
 function Home() {
-  const list = [
-    {
-      firstName: 'Oussama',
-      lastName: 'Hamdaoui',
-      phoneNumber: '+33 06 23392740',
-      contactId: '1',
-    }
-  ];
+  const [contactList, setContactList] = useState([]);
+
+  async function fetchContacts() {
+    const contacts = await getContacts();
+    setContactList(contacts);
+  }
+
+  useEffect(() => {
+    fetchContacts()  
+  }, []);
+
   return (
     <section className="page">
       <Head></Head>
-      <ContactList list={list}></ContactList>
+      <ContactList list={contactList}></ContactList>
     </section>
   );
 }
