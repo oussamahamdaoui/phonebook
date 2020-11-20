@@ -1,0 +1,48 @@
+@import '../colors';
+
+.input {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 1px solid transparent;
+  padding: 5px;
+  padding-left: 10px;
+  background-color: $bg-secondary;
+  border-radius: 3px;
+  cursor: text;
+
+  .label {
+    color: $light;
+    top: 1.5em;
+    position: absolute;
+    font-size: 0.8em;
+    transition: all 250ms ease-in-out;
+    pointer-events: none;
+    transform-origin: center left;
+  }
+  
+  &.hasValue {
+    &:focus-within {
+      border: 1px solid $primary;
+    }
+    .label {
+      color: $light-grey;
+      transform: translateY(-90%) scale(0.8);
+      font-size: 0.8em;
+    }
+  }
+
+  input {
+    border-radius: 0;
+    display: block;
+    border: none;
+    width: 100%;
+    margin-top: 15px;
+    padding-bottom: 0.1em;
+    font-size: 1.1em;
+    padding-left: 0.1em;
+    outline: none;
+    color: $light;
+    background-color: transparent;
+  }
+}

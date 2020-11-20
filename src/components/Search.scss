@@ -1,0 +1,21 @@
+@import '../colors';
+
+.search{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  &>svg{
+    position: absolute;
+    z-index: 2;
+    width: 20px;
+    height: 20px;
+    left: 0.5em;
+    stroke: $icon-secondary;
+  }
+  .input{
+    flex:1;
+    padding-left: calc(20px + 1em);
+  }
+}

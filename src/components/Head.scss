@@ -1,0 +1,10 @@
+.head{
+  display: flex;
+  width: 100%;
+  .search{
+    flex:1;
+  }
+  .button{
+    margin-left: 1em;
+  }
+}
