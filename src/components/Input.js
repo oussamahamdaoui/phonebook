@@ -12,6 +12,7 @@ function Input({
 
   const handleChanage = (evt) => {
     setValue(evt.target.value);
+    change(evt.target.value);
   }
 
   const handleBlur = () => {

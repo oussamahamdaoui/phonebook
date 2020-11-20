@@ -45,9 +45,12 @@ const baseGet = (baseUrl) => async (url, token) => {
 const get = baseGet(API_URL);
 const post = basePost(API_URL);
 
+const PHONE_REGEX = /^\+[0-9]{2} [0-9]{2} [0-9]{6,}$/;
+
 
 export {
   getRandomColor,
   get,
   post,
+  PHONE_REGEX,
 };

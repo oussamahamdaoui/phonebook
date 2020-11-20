@@ -9,10 +9,10 @@ function ContactList({
       {list.map(({
         firstName,
         lastName,
-        contactId,
+        _id,
         phoneNumber
       }) =>
-        <ContactElement firstName={firstName} lastName={lastName} key={contactId} phoneNumber={phoneNumber}>
+        <ContactElement firstName={firstName} lastName={lastName} key={_id} phoneNumber={phoneNumber}>
         </ContactElement>
       )}
     </div>

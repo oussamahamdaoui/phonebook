@@ -4,8 +4,11 @@ function Button({
   onClick = () => { },
   type= '',
   children,
+  disabeled,
 }) {
-  return <button className={'button ' + (type)} onClick={onClick}>{children}</button>
+  return (<button className={'button ' + (type)} onClick={onClick} disabled={disabeled}>
+    {children}
+  </button>);
 }
 
 export default Button;
