@@ -13,7 +13,7 @@ function Home() {
   }
 
   useEffect(() => {
-    fetchContacts()  
+    fetchContacts()
   }, []);
 
   return (

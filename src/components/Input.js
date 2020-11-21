@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './Input.scss';
 
 function Input({
@@ -20,6 +20,13 @@ function Input({
       setHasValue(false);
     }
   }
+
+  useEffect(() => {
+    setValue(value);
+    if (value !== '') {
+      setHasValue(true);
+    }
+  }, [value]);
 
   return <div className={'input ' + (hasValue ? 'hasValue' : '')}>
       <div className="label">{label}</div>

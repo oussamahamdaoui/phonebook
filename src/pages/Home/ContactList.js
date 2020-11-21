@@ -12,7 +12,13 @@ function ContactList({
         _id,
         phoneNumber
       }) =>
-        <ContactElement firstName={firstName} lastName={lastName} key={_id} phoneNumber={phoneNumber}>
+        <ContactElement
+          firstName={firstName}
+          lastName={lastName}
+          key={_id}
+          phoneNumber={phoneNumber}
+          contactId={_id}
+        >
         </ContactElement>
       )}
     </div>

@@ -18,7 +18,13 @@ const createContact = async ({
   return res.contactId;
 };
 
+const getContact = async (contactId) => {
+  const res = await get(`contact/${contactId}`);
+  return res.contact;
+}
+
 export {
   getContacts,
   createContact,
+  getContact,
 }

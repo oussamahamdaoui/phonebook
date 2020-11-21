@@ -47,10 +47,14 @@ const post = basePost(API_URL);
 
 const PHONE_REGEX = /^\+[0-9]{2} [0-9]{2} [0-9]{6,}$/;
 
+const isFormValid = (firstName='', lastName='', phoneNumber='') => {
+  return !(firstName !== '' && lastName !== '' && phoneNumber.match(PHONE_REGEX));
+};
 
 export {
   getRandomColor,
   get,
   post,
   PHONE_REGEX,
+  isFormValid
 };
