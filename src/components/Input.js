@@ -5,6 +5,7 @@ function Input({
   label = '',
   type = 'text',
   change = () => { },
+  enter = () => {},
   value='',
 }) {
   const [hasValue, setHasValue] = useState(false);
@@ -35,6 +36,11 @@ function Input({
       onChange={handleChanage}
       onFocus={() => setHasValue(true)}
       onBlur={handleBlur}
+      onKeyDown={(evt) => {
+        if (evt.key !== 'Enter') return;
+        evt.preventDefault();
+        enter(val);
+      }}
     ></input>
     </div>
 }
