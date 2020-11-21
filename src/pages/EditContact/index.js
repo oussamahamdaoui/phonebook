@@ -1,18 +1,29 @@
 import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import { getContact } from '../../api';
+import { Link, useHistory, useParams } from 'react-router-dom';
+import { getContact, updateContact } from '../../api';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
 import { isFormValid } from '../../utils';
+import './EditContact.scss';
 
 
 
 function EditContact() {
+  const history = useHistory();
   const { contactId } = useParams();
   const [state, setState] = useState({});
 
-  const handleUpdate = (evt) => { 
+  const handleUpdate = async (evt) => {
     evt.preventDefault();
+    const error = await updateContact({
+      contactId,
+      newPhoneNumber: state.phoneNumber,
+      newFirstName: state.firstName,
+      newLastName: state.lastName,
+    });
+    if (error === false) {
+      history.push('/');
+    }
   };
 
   const setLastName = (lastName) => {
@@ -46,7 +57,7 @@ function EditContact() {
 
   return (
     <section className="new-contact">
-      <h1>Create a new contact</h1>
+      <h1>Update contact</h1>
       <form className="new-contact-form">
         <Input label="Last name" type="text" value={state.lastName} change={setLastName}></Input>
         <Input label="First name" type="text" value={state.firstName} change={setFirstName}></Input>
@@ -54,7 +65,7 @@ function EditContact() {
         <Button type='primary'
           disabeled={isFormValid(state.firstName, state.lastName, state.phoneNumber)}
           onClick={handleUpdate}>
-          Create
+          Update
         </Button>
         <Link to="/">
           <Button type='cancel'>Cancel</Button>

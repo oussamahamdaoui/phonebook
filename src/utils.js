@@ -3,6 +3,9 @@ const COLORS = [
   '#3498db',
   '#e74c3c',
   '#8e44ad',
+  '#70a1ff',
+  '#ff6b81',
+  '#ffa502',
 ];
 
 const API_URL = 'http://localhost:3001/api/';

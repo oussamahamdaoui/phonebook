@@ -23,8 +23,25 @@ const getContact = async (contactId) => {
   return res.contact;
 }
 
+const updateContact = async ({
+  contactId,
+  newPhoneNumber,
+  newFirstName,
+  newLastName,
+}) => {
+  const res = await post('update-contact', {
+    contactId,
+    newPhoneNumber,
+    newFirstName,
+    newLastName,
+  });
+
+  return res.error;
+}
+
 export {
   getContacts,
   createContact,
   getContact,
+  updateContact,
 }

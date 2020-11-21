@@ -1,0 +1,18 @@
+@import '../../colors';
+ 
+
+.update-contact{
+  h1{
+    text-align: center;
+    color: $light;
+  }
+  .update-contact-form{
+    .input{
+      margin-bottom: 1em;
+    }
+
+    .cancel{
+      margin-left: 1em;
+    }
+  }
+}
